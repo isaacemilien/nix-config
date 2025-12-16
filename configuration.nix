@@ -19,16 +19,25 @@
   time.timeZone = "Europe/London";
 
   ################################
-  # X11 + LightDM + i3
+  # X11 + i3
   ################################
   services.xserver = {
     enable = true;
 
-    displayManager.lightdm.enable = true;
+    displayManager.startx.enable = true;
+    displayManager.lightdm.enable = false;
 
     windowManager.i3 = {
       enable = true;
       package = pkgs.i3;
+
+      extraSessionCommands = '' 
+        exec --no-startup-id xrandr --output DP-2 --auto --primary --output DP-0 --auto --right-of DP-2 --rotate left
+
+        workspace 1 output DP-2
+        workspace 2 output DP-0
+
+      '';
     };
 
     xkb.layout = "gb";
