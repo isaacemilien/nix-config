@@ -35,10 +35,80 @@
         "type": "indirect"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1765779637,
+        "narHash": "sha256-KJ2wa/BLSrTqDjbfyNx70ov/HdgNBCBBSQP3BIzKnv4=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "1306659b587dc277866c7b69eb97e5f07864d8c4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1765779637,
+        "narHash": "sha256-KJ2wa/BLSrTqDjbfyNx70ov/HdgNBCBBSQP3BIzKnv4=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "1306659b587dc277866c7b69eb97e5f07864d8c4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "playlist-select": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1766060846,
+        "narHash": "sha256-mwagVGmzpLs69mUpeq2jIPSScy3tOFOXPZ2ob93SZeg=",
+        "owner": "isaacemilien",
+        "repo": "playlist-select",
+        "rev": "6f1f8a86dfc8c501540a067449fa8fc777168bda",
+        "type": "github"
+      },
+      "original": {
+        "owner": "isaacemilien",
+        "repo": "playlist-select",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "playlist-select": "playlist-select",
+        "tiny-terminal-timer": "tiny-terminal-timer"
+      }
+    },
+    "tiny-terminal-timer": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3"
+      },
+      "locked": {
+        "lastModified": 1766062296,
+        "narHash": "sha256-Z4B9G2WIr3QKWD9KPa85uYuigUjLsj2eyVd7HjDs0AM=",
+        "owner": "isaacemilien",
+        "repo": "tiny-terminal-timer",
+        "rev": "58d9a2c21e7a0037e35836fe532f4395a638be2b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "isaacemilien",
+        "repo": "tiny-terminal-timer",
+        "type": "github"
       }
     }
   },
