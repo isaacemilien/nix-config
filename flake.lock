@@ -98,11 +98,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1766062296,
-        "narHash": "sha256-Z4B9G2WIr3QKWD9KPa85uYuigUjLsj2eyVd7HjDs0AM=",
+        "lastModified": 1766360039,
+        "narHash": "sha256-hrpmUkpjcaZgF06+UAs9ftqk4CRvloSJAj/yKVHgVkU=",
         "owner": "isaacemilien",
         "repo": "tiny-terminal-timer",
-        "rev": "58d9a2c21e7a0037e35836fe532f4395a638be2b",
+        "rev": "f29d47bebecbd787e67398d51ebb280d050befef",
         "type": "github"
       },
       "original": {
