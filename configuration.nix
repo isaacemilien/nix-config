@@ -148,6 +148,7 @@
     legcord
     pulseaudio
     gtk4
+    man-pages
   ];
 
   system.stateVersion = "26.05";
