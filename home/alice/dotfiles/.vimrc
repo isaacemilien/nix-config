@@ -18,6 +18,8 @@ function! AppendTimeInline(pomo_count, lnum)
 endfunction
 
 function! PullContent()
+	:mark C
+
 	let cur_line = line('.')
 	let cont = getline(cur_line) 
 	let i = cur_line - 1
