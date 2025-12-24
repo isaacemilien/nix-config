@@ -77,6 +77,14 @@ function! SaveBackupWithTimestamp()
         echo "Backup saved: " . l:backup_file
 endfunction
 
+function! CreatePomodoroTemplate()
+	let text_content = ["---", "", "# " . strftime('%Y%m%d'), "",  "## tasks", "",  "## dump", "",  "## bucket", ""]
+
+	let cur_line = line('.')
+	
+	call append(cur_line, text_content)
+
+endfunction
 
 command! Time call PullContent()
 command! Webhook call CallWebhook()
@@ -84,4 +92,4 @@ command! Webhook call CallWebhook()
 command! BackupWithTime call SaveBackupWithTimestamp()
 cabbrev wb BackupWithTime
 
-
+command! Pomtem call CreatePomodoroTemplate()
