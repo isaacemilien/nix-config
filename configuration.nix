@@ -15,6 +15,7 @@
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
   networking.firewall.enable = true;
+  # networking.firewall.allowedTCPPorts = [ 8000 ];
 
   time.timeZone = "Europe/London";
 
