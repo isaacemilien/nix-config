@@ -32,6 +32,12 @@
           })
 	];
       };
+      ec2 = lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/ec2.nix
+        ];
+      };
     };
   };
 }
