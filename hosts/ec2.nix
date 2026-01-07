@@ -7,7 +7,6 @@
     vim
     git
     tmux
-    python3
   ];
 
   system.stateVersion = "25.05";
