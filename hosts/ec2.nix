@@ -1,23 +1,14 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports = [
-    ../modules/common.nix
-    ../hardware-configuration.nix
+  imports = [ "${modulesPath}/virtualisation/amazon-image.nix" ];
+
+  environment.systemPackages = with pkgs; [
+    vim
+    git
+    tmux
+    python3
   ];
 
-  networking.hostName = "ec2-nixos";
-  networking.useDHCP = lib.mkDefault true;
-  
-  services.openssh = {
-    enable = true;
-    settings = {
-      PasswordAuthentication = false;
-      PermitRootLogin = "no";
-    };
-  };
-  
-  networking.firewall.allowedTCPPorts = [ 22 ];
-
-  services.xserver.enable = false;
+  system.stateVersion = "25.05";
 }
