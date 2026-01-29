@@ -15,7 +15,7 @@
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
   networking.firewall.enable = true;
-  # networking.firewall.allowedTCPPorts = [ 8000 ];
+  networking.firewall.allowedTCPPorts = [ 8000 ];
 
   time.timeZone = "Europe/London";
 
@@ -128,6 +128,12 @@
   }; 
 
   programs.noisetorch.enable = true;
+  
+  ################################
+  # Containerisation 
+  ################################
+  virtualisation.podman.enable = true;
+  virtualisation.containers.enable = true;
 
   ################################
   # Packages
@@ -150,6 +156,7 @@
     pulseaudio
     gtk4
     man-pages
+    podman
   ];
 
   system.stateVersion = "26.05";
