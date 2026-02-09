@@ -37,7 +37,6 @@
 
         workspace 1 output DP-2
         workspace 2 output DP-0
-
       '';
     };
 
@@ -93,42 +92,14 @@
   # Audio
   ################################
 
-  hardware.pulseaudio.enable = false;
-
   security.rtkit.enable = true;
-
   services.pipewire = {
-    enable = true;
+    enable = true; 
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-
-    extraConfig = {
-      pipewire."10-echo-cancel" = {
-        "context.modules" = [
-          {
-            name = "libpipewire-module-echo-cancel";
-            args = {
-              "aec.method" = "webrtc";
-              "aec.args" = {
-                "noise_suppression" = true;
-                "noise_suppression_level" = 3; 
-                "voice_detection" = true;
-              };
-
-              "source.props" = {
-                "node.name" = "echo_cancel_source";
-                "node.description" = "Noise-suppressed Microphone";
-              };
-            };
-          }
-        ];
-      };
-    };
   }; 
 
-  programs.noisetorch.enable = true;
-  
   ################################
   # Containerisation 
   ################################
@@ -152,11 +123,11 @@
     python3
     anki
     vscode
-    legcord
-    pulseaudio
     gtk4
     man-pages
     podman
+
+    pulseaudio
   ];
 
   system.stateVersion = "26.05";
