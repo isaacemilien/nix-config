@@ -122,10 +122,9 @@
     mpv
     python3
     anki
-    vscode
     gtk4
     man-pages
-    podman
+    nodejs_25
 
     pulseaudio
   ];
