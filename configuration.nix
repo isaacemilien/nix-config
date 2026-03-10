@@ -33,10 +33,10 @@
       package = pkgs.i3;
 
       extraSessionCommands = '' 
-        exec --no-startup-id xrandr --output DP-2 --auto --primary --output DP-0 --auto --right-of DP-2 --rotate left
+        exec --no-startup-id xrandr --output DP-2 --auto --primary --output HDMI-0 --auto --right-of DP-2 --rotate left
 
         workspace 1 output DP-2
-        workspace 2 output DP-0
+        workspace 2 output HDMI-0
       '';
     };
 
@@ -111,7 +111,6 @@
   ################################
   environment.systemPackages = with pkgs; [
     vim
-    wget
     alacritty
     xorg.xinit
     git
