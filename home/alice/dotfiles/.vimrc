@@ -1,39 +1,57 @@
+" Vim settings
 :set autoindent
 
 syntax enable
 filetype plugin indent on
 au BufRead,BufNewFile *.md set filetype=markdown
 
-function! CallWebhook(content, discord_ip)
-	call system("curl --header \"Content-Type: application/json\" --data '{\"content\": \"" . a:content  . "\"}'". a:discord_ip)
-endfunction
+" Workflow
 
-function! AppendTimeInline(pomo_count, lnum)
+" Create formatted pomodoro on given line
+function! AppendTimeInline(pomo_count, lnum, char_prefix, end_time)
   	let t = localtime()
-    	let stamp = '- P' . string(a:pomo_count) . ' ' . strftime('%H%M', t) . ' ' . strftime('%H%M', t + 1500) . ': '
+    	let stamp = '- '. a:char_prefix . string(a:pomo_count) . ' ' . strftime('%H%M', t)
+
+	if a:end_time > 0
+		let stamp = stamp . ' ' . strftime('%H%M', t + 1500)
+    		call system("tmux send-keys -t :.+ 'tmr 25' C-m")
+	endif
+
+	let stamp = stamp . ': ' 
+
         let line = getline(a:lnum)
 	let updated = substitute(line, '\S\+', stamp . '\0', '')
 	call setline(a:lnum, updated)
-    	call system("tmux send-keys -t :.+ 'tmr 25' C-m")
 endfunction
 
-function! PullContent()
+" Call pomodoro formatter with relevent pomodoro data, pass formatting of
+" high level pomodoro headers
+function! PullContent(char_prefix, metric_char, end_time)
+
+	" Mark position of latest pomodoro 
 	:mark C
 
+	" Get current line number and content
 	let cur_line = line('.')
 	let cont = getline(cur_line) 
 	let i = cur_line - 1
+
+	" Loop updwards in document until finding heading 3
 	while i > 0
 		let header_line = getline(i)
 
+		" Check if line contains heading 3 prefix
 		if stridx(header_line, '###') > -1 
+			
+			" Finds length between '[' and ']'
 			let open_idx = stridx(header_line, '[')
 			let close_idx = stridx(header_line, ']')
-			let x_count = close_idx - open_idx 
-			let header_line = header_line[:open_idx] . 'x' . header_line[open_idx + 1:] 
-			
+
+			" Gets pomodoro count based on difference
+			let metric_count = close_idx - open_idx 
+			let header_line = header_line[:open_idx] . a:metric_char . header_line[open_idx + 1:] 
 			call setline(i, header_line)
-			call AppendTimeInline(x_count, cur_line)
+			call AppendTimeInline(metric_count, cur_line, a:char_prefix, a:end_time)
 
 			break
 		endif
@@ -41,6 +59,7 @@ function! PullContent()
 		let i -= 1
 	endwhile
 endfunction
+
 
 function! SaveBackupWithTimestamp()
         let l:current_file = expand('%:p')
@@ -82,12 +101,14 @@ function! CreatePomodoroTemplate()
 
 	let cur_line = line('.')
 	
-	call append(cur_line, text_content)
+	call append(cur_line, text_content, 0)
 
 endfunction
 
-command! Time call PullContent()
-command! Webhook call CallWebhook()
+
+" Commands
+command! Time call PullContent("P", "x", 1)
+command! Lime call PullContent("L", "~", 0)
 
 command! BackupWithTime call SaveBackupWithTimestamp()
 cabbrev wb BackupWithTime
