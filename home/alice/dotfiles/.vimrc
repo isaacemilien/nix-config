@@ -101,7 +101,7 @@ function! CreatePomodoroTemplate()
 
 	let cur_line = line('.')
 	
-	call append(cur_line, text_content, 0)
+	call append(cur_line, text_content)
 
 endfunction
 
