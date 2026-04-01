@@ -97,7 +97,7 @@ function! SaveBackupWithTimestamp()
 endfunction
 
 function! CreatePomodoroTemplate()
-	let text_content = ["---", "", "# " . strftime('%Y%m%d'), "",  "## tasks", "",  "## waiting", "",  "## recurring", ""]
+	let text_content = ["---", "", "# " . strftime('%Y%m%d'), "",  "## tasks", ""]
 
 	let cur_line = line('.')
 	
