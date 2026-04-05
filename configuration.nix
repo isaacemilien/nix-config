@@ -15,7 +15,7 @@
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
   networking.firewall.enable = true;
-  # networking.firewall.allowedTCPPorts = [ 8000 ];
+  networking.firewall.allowedTCPPorts = [ 8000 ];
 
   time.timeZone = "Europe/London";
 
@@ -120,14 +120,14 @@
     yt-dlp
     mpv
     python3
-    anki
+    # anki
     gtk4
     man-pages
-    nodejs_25
+    nodejs_24
 
     pulseaudio
   ];
 
-  system.stateVersion = "26.05";
+  system.stateVersion = "25.11";
 }
 
