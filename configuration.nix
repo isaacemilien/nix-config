@@ -15,7 +15,8 @@
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
   networking.firewall.enable = true;
-  networking.firewall.allowedTCPPorts = [ 8000 ];
+  # networking.firewall.allowedTCPPorts = [ 8000 22 ];
+  # services.openssh.enable = true;
 
   time.timeZone = "Europe/London";
 
@@ -126,6 +127,7 @@
     nodejs_24
 
     pulseaudio
+    anki-bin
   ];
 
   system.stateVersion = "25.11";
