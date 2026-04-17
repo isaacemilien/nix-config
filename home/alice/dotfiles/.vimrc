@@ -105,10 +105,16 @@ function! CreatePomodoroTemplate()
 
 endfunction
 
+function! Scratch()
+	execute "e ~/Documents/pkb/scratch/" . strftime('%Y%m%d') . ".md" | "w" | "mark S"
+
+endfunction
+
 
 " Commands
 command! Time call PullContent("P", "x", 1)
 command! Lime call PullContent("L", "~", 0)
+command! Sime call Scratch()
 
 command! BackupWithTime call SaveBackupWithTimestamp()
 cabbrev wb BackupWithTime
