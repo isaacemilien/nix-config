@@ -106,7 +106,7 @@ function! CreatePomodoroTemplate()
 endfunction
 
 function! Scratch()
-	execute "e ~/Documents/pkb/scratch/" . strftime('%Y%m%d') . ".md" 
+	execute "e ~/Documents/pkb/scratch/" . strftime('%Y-%m-%d') . ".md" 
 	execute "w"
 	execute "mark S"
 
