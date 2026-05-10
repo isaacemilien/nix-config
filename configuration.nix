@@ -121,7 +121,6 @@
     yt-dlp
     mpv
     python3
-    # anki
     gtk4
     man-pages
     nodejs_24
