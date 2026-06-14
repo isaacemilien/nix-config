@@ -15,8 +15,8 @@
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
   networking.firewall.enable = true;
-  # networking.firewall.allowedTCPPorts = [ 8000 22 ];
-  # services.openssh.enable = true;
+  networking.firewall.allowedTCPPorts = [ 8000 22 ];
+  services.openssh.enable = true;
 
   time.timeZone = "Europe/London";
 

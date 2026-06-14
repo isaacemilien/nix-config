@@ -6,6 +6,10 @@ alias m299='mpv -ytdl-format=299+bestaudio '
 alias xc='xclip -selection clipboard'
 alias bd='cp ~/Documents /mnt -r; mv /mnt/Documents /mnt/$(date -I)"_Documents"'
 
+ghi(){
+	firefox https://www.github.com/isaacemilien/$1/issues/new &
+}
+
 set -o vi
 
 export PATH="$HOME/.local/bin:$PATH"
