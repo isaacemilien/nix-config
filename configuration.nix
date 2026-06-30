@@ -127,7 +127,15 @@
 
     pulseaudio
     anki-bin
+
+    ripgrep
+    fd
   ];
+
+  programs.fzf = {
+    keybindings = true;
+    fuzzyCompletion = true;
+  };
 
   system.stateVersion = "25.11";
 }
