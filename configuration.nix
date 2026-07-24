@@ -130,6 +130,8 @@
 
     ripgrep
     fd
+
+    openvpn
   ];
 
   programs.fzf = {
