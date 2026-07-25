@@ -59,6 +59,18 @@
     open = true;
   };
 
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+      General = {
+        Enable = "Source,Sink,Media,Socket";
+      };
+    };
+  };
+
+  services.blueman.enable = true;
+
   ################################
   # Portals
   ################################
@@ -99,6 +111,7 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+    wireplumber.enable = true;
   }; 
 
   ################################
