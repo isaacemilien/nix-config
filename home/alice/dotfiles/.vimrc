@@ -122,3 +122,7 @@ command! BackupWithTime call SaveBackupWithTimestamp()
 cabbrev wb BackupWithTime
 
 command! Pomtem call CreatePomodoroTemplate()
+
+
+nnoremap <C-S> :w<CR>
+nnoremap <C-L> :Li<CR>
