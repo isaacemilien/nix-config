@@ -137,6 +137,7 @@
     gtk4
     man-pages
     nodejs_24
+    gdb
 
     pulseaudio
     anki-bin
