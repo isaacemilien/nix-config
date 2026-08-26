@@ -19,10 +19,12 @@
 		extraConfig = builtins.readFile ./dotfiles/.tmux.conf;
 	};
         
-	programs.gdb = {
-		enable = true;
-		extraConfig = builtins.readFile ./dotfiles/.gdbinit;
-	};
+        home.file.".gdbinit".text = ''
+          set disassembly-flavor intel
+          set pagination off
+          layout asm
+          layout regs
+        '';
 
 	home.stateVersion = "25.11";
 }
