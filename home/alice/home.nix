@@ -18,6 +18,11 @@
 		enable = true;
 		extraConfig = builtins.readFile ./dotfiles/.tmux.conf;
 	};
+        
+	programs.gdb = {
+		enable = true;
+		extraConfig = builtins.readFile ./dotfiles/.gdbinit;
+	};
 
 	home.stateVersion = "25.11";
 }
