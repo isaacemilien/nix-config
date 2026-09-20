@@ -146,6 +146,8 @@
     fd
 
     openvpn
+
+    claude-code
   ];
 
   programs.fzf = {

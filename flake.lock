@@ -73,11 +73,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1785961358,
-        "narHash": "sha256-WUnVuh1QUbOJxw3A2Dos+YPM4S0+MA0TaaV6jxMO6ZU=",
+        "lastModified": 1788294371,
+        "narHash": "sha256-FqOSu7toC8OC8Vvzoi2Pl08vFtOG6AVRNoqzAgUp2Co=",
         "owner": "isaacemilien",
         "repo": "playlist-select",
-        "rev": "780b7f9b2d25b81a16a6a51db2931f2517198140",
+        "rev": "18fdf44389078f15e2fe07f57f7d46727c7c3a33",
         "type": "github"
       },
       "original": {
