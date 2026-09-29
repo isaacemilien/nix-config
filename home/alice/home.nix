@@ -16,6 +16,10 @@
 	
 	programs.tmux = {
 		enable = true;
+		mouse = true;
+		keyMode = "vi";
+		historyLimit = 50000;
+		focusEvents = true;
 		extraConfig = builtins.readFile ./dotfiles/.tmux.conf;
 	};
         
