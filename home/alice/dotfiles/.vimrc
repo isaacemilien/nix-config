@@ -1,5 +1,6 @@
 " Vim settings
 :set autoindent
+:set relativenumber
 
 syntax enable
 filetype plugin indent on
