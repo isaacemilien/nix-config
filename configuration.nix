@@ -16,6 +16,13 @@
   networking.networkmanager.enable = true;
   networking.firewall.enable = true;
   networking.firewall.allowedTCPPorts = [ 8000 22 ];
+  networking.getaddrinfo.precedence = {
+    "::1/128" = 50;
+    "::/0" = 40;
+    "2002::/16" = 30;
+    "::/96" = 20;
+    "::ffff:0:0/96" = 100;
+  };
   services.openssh.enable = true;
 
   time.timeZone = "Europe/London";
