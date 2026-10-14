@@ -1,5 +1,7 @@
 alias tt='vim ~/Documents/new-2.md'
 alias ly='lynx -cookies'
+alias c='claude'
+alias cu='claude /usage'
 
 ghi(){
 	firefox https://www.github.com/isaacemilien/$1/issues/new &
